@@ -44,6 +44,12 @@ Workflow (from the SMILES to epsilon_r)
     6. epsilon_r from the Onsager-Kirkwood-Froehlich relation (craft_epsilon.model)
            (2 eps + eps_inf)(eps - eps_inf) / (eps (eps_inf + 2)^2) = N_A <mu_eff^2> / (9 eps0 kB T V_m).
 
+    Temperature: the model depends on T through the orientation term and the molar volume,
+    V_m(T) = V_m(298.15 K) (1 + alpha_V (T - 298.15 K)) with a fixed alpha_V = 1e-3 1/K; this was used to fit
+    data measured at other temperatures. CRAFT-epsilon is meant to be used at 298.15 K only (conformer
+    ensembles, Boltzmann weights and molar volume refer to 298.15 K, and the temperature dependence of
+    association is not represented); predict() and epsilon() therefore always use 298.15 K.
+
     Conformer ensembles depend slightly on the RDKit version and platform (the embedding of a given random seed
     can differ); the fitted parameters refer to the ensembles used in the paper.
 
@@ -64,10 +70,10 @@ References
 """
 from rdkit import RDLogger
 
-RDLogger.DisableLog("rdApp.*")
+from .model import epsilon, epsilon_from_record, predict
+from .parameters import PARAMETERS
 
-from .model import epsilon, epsilon_from_record, predict  # noqa: E402
-from .parameters import PARAMETERS  # noqa: E402
+RDLogger.DisableLog("rdApp.*")   # no RDKit warnings while molecules are processed
 
 __version__ = "1.0.0"
 __license__ = "MIT"

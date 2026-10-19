@@ -8,6 +8,12 @@ conformer ensembles.
 ## Installation
 
 ```bash
+pip install craft-epsilon
+```
+
+or from a local copy of this repository:
+
+```bash
 pip install .                 # from this folder
 ```
 
@@ -40,6 +46,12 @@ predict("ethanol")        # dict with class, polar groups, V_m, eps_inf, dipoles
 
 A valid SMILES string is used directly; anything else is resolved as a name with MoleculeResolver
 (cross-checked, neutral structure; needs an internet connection).
+
+**Temperature.** The model contains a temperature dependence through the orientation term and the molar volume,
+V_m(T) = V_m(298.15 K)·(1 + α_V(T − 298.15 K)) with a fixed α_V = 10⁻³ K⁻¹, which was used to fit data measured at
+other temperatures. CRAFT-ε is meant to be used at 298.15 K only: the conformer ensembles, their Boltzmann weights
+and the molar volume refer to 298.15 K, and the temperature dependence of association is not represented.
+`epsilon()`, `predict()` and the command line therefore always use 298.15 K.
 
 ## Tests
 

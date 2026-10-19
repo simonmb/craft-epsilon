@@ -47,6 +47,16 @@ def test_permittivity_decreases_with_temperature(reference, records):
     assert values[0] > values[1] > values[2]
 
 
+def test_molar_volume_follows_thermal_expansion(reference, records):
+    """V_m(T) = V_m(298.15 K) (1 + alpha_V (T - 298.15 K)) with the fixed alpha_V of the paper fit."""
+    from craft_epsilon.constants import THERMAL_EXPANSION_PER_K
+    smiles = "CCBr"
+    r = epsilon_from_record(records[smiles], smiles, temperature=350.0)
+    assert r["molar_volume_298K_cm3_mol"] == pytest.approx(reference[smiles]["molar_volume_smi2DC"], abs=0.01)
+    assert r["molar_volume_cm3_mol"] == pytest.approx(
+        r["molar_volume_298K_cm3_mol"] * (1 + THERMAL_EXPANSION_PER_K * (350.0 - 298.15)), rel=1e-12)
+
+
 def test_weights_and_effective_dipole(reference, records):
     smiles = "CC(Br)C(C)Br"            # two diastereomer ensembles with mirror twins
     r = epsilon_from_record(records[smiles], smiles)

@@ -6,7 +6,7 @@ import numpy as np
 from rdkit import Chem
 from rdkit.Chem import rdMolDescriptors
 from .conformers import find_xtb_binary, generate_conformers
-from .constants import ATOM_TYPES, AU_TO_A3, DEBYE, EPS0, KB, N_A, TEMPERATURE_K, X_MAX
+from .constants import ATOM_TYPES, AU_TO_A3, DEBYE, EPS0, KB, N_A, TEMPERATURE_K, THERMAL_EXPANSION_PER_K, X_MAX
 from .descriptors import conformer_descriptors
 from .groups import atom_group, atom_type, base_label, family, fragments
 from .molar_volume import molar_volume
@@ -41,11 +41,19 @@ def atom_type_scales(cls):
 
 
 def epsilon_from_record(record, smiles, temperature=TEMPERATURE_K):
-    """epsilon_r and intermediate quantities from a conformer record (output of generate_conformers)."""
+    """epsilon_r and intermediate quantities from a conformer record (output of generate_conformers).
+
+    The model contains a temperature dependence through T in the orientation term and through the molar volume,
+    V_m(T) = V_m(298.15 K) (1 + alpha_V (T - 298.15 K)) with the fixed alpha_V = THERMAL_EXPANSION_PER_K, as in the
+    fit of the paper (data measured at other temperatures). It is meant to be used at 298.15 K only: the conformer
+    ensembles, their Boltzmann weights and the group-contribution molar volume refer to 298.15 K, and the
+    temperature dependence of association is not represented. The temperature argument exists to reproduce the
+    fit; predict() and epsilon() always use 298.15 K."""
     mol = Chem.MolFromSmiles(smiles)
     frags = fragments(smiles)
     cls = classify(smiles, frags)
-    vm = molar_volume(mol)
+    vm_298 = molar_volume(mol)        # 298.15 K; corrected to T with the fixed alpha_V, as in the paper fit
+    vm = vm_298 * (1 + THERMAL_EXPANSION_PER_K * (temperature - TEMPERATURE_K))
     alpha, per_conformer = conformer_descriptors(record, frags)
 
     # Clausius-Mossotti with atom-group scaled, Boltzmann-averaged atomic polarizabilities
@@ -71,7 +79,8 @@ def epsilon_from_record(record, smiles, temperature=TEMPERATURE_K):
     a = N_A * mu_sq_eff * DEBYE ** 2 / (9 * EPS0 * KB * temperature * vm * 1e-6)
     b = eps_inf + a * (eps_inf + 2) ** 2
     eps = (b + math.sqrt(b * b + 8 * eps_inf ** 2)) / 4
-    return {"epsilon": eps, "class": cls, "molar_volume_cm3_mol": vm, "eps_inf": eps_inf,
+    return {"epsilon": eps, "class": cls, "molar_volume_cm3_mol": vm, "molar_volume_298K_cm3_mol": vm_298,
+            "eps_inf": eps_inf,
             "alpha_boltzmann_A3": float(alpha.sum()) * AU_TO_A3, "alpha_scaled_A3": alpha_scaled * AU_TO_A3,
             "mu_rms_xtb_D": math.sqrt(mu_sq_raw), "mu_eff_rms_D": math.sqrt(mu_sq_eff), "A": a,
             "rest_scale": rest_scale,

@@ -8,6 +8,9 @@ SOLVENT = "ether"                     # ALPB solvent of the conformer ensembles 
 TEMPERATURE_K = 298.15                # conformer ensembles, Boltzmann weights, molar volume and prediction
 
 
+THERMAL_EXPANSION_PER_K = 1.0e-3      # alpha_V (K^-1), fixed (not fitted): V_m(T) = V_m(298.15 K) (1 + alpha_V (T - 298.15 K))
+
+
 N_WORKERS = 8                         # parallel single-threaded xtb processes
 
 
