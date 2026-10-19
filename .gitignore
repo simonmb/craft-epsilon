@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+build/
+dist/
+*.egg-info/
+# xtb releases downloaded at run time (see craft_epsilon/conformers.py)
+craft_epsilon/xtb/

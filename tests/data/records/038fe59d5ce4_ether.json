@@ -1,0 +1,122 @@
+{
+  "status": "ok",
+  "smiles": "CCBr",
+  "solvent": "ether",
+  "protocol": {
+    "method": "GFN2-xTB",
+    "thermochemistry": "xTB coupled RRHO with free-rotor treatment below 50 cm^-1",
+    "temperature_k": 298.15,
+    "n_seed": 100,
+    "n_embedded": 1,
+    "polar_h_amplification": "For molecules with at least two rotatable terminal OH, SH, or NH2 groups, each ETKDG conformer is supplemented with two random polar-H torsion variants and one feasible intramolecular-H-bond variant before optimization",
+    "n_polar_h_variants": 0,
+    "n_optimized": 1,
+    "elapsed_seconds": 0.296,
+    "embed_prune_rms_a": 0.125,
+    "postopt_rms_a": 0.5,
+    "postopt_rmsd": "Kabsch RMSD (reflections allowed) minimised over spyrmsd graph automorphisms, carbon-bound H removed",
+    "postopt_mu_d": 0.2,
+    "mirror_images": "chiral conformers are stored with an explicit mirror twin ('mirror_of')",
+    "mirror_distinct_rms_a": 0.1,
+    "diastereomer_averaging": "Boltzmann average within each diastereomer, equal weight between them",
+    "stereo_coupling_bonds": 3,
+    "stereo_polar_bonds": 2,
+    "enumerated_stereo_elements": [],
+    "stereo_fallback": null
+  },
+  "n_success": 1,
+  "failures": {},
+  "diastereomers": [
+    {
+      "index": 0,
+      "smiles": "CCBr",
+      "n_seed": 100,
+      "n_embedded": 1,
+      "n_polar_h_variants": 0,
+      "n_success": 1,
+      "n_conformers": 1
+    }
+  ],
+  "conformers": [
+    {
+      "seed_id": 0,
+      "optimization_attempts": 1,
+      "molblock": "\n     RDKit          3D\n\n  8  7  0  0  0  0  0  0  0  0999 V2000\n   -0.8087    0.0450    0.0842 C   0  0  0  0  0  0  0  0  0  0  0  0\n    0.6803   -0.2149    0.0276 C   0  0  0  0  0  0  0  0  0  0  0  0\n    1.6302    1.2428   -0.9059 Br  0  0  0  0  0  0  0  0  0  0  0  0\n   -1.0220    0.9688    0.6178 H   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.2929   -0.7790    0.6053 H   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.2277    0.1188   -0.9171 H   0  0  0  0  0  0  0  0  0  0  0  0\n    1.1245   -0.2630    1.0201 H   0  0  0  0  0  0  0  0  0  0  0  0\n    0.9163   -1.1183   -0.5320 H   0  0  0  0  0  0  0  0  0  0  0  0\n  1  2  1  0\n  2  3  1  0\n  1  4  1  0\n  1  5  1  0\n  1  6  1  0\n  2  7  1  0\n  2  8  1  0\nM  END\n",
+      "alpb": {
+        "energy_hartree": -10.918852593353,
+        "dipole_debye": 4.021,
+        "dipole_vector_debye": [
+          -2.175734980888,
+          -2.8264220779760003,
+          1.8554749252899998
+        ],
+        "dipole_vector_unit": "debye",
+        "charges_e": [
+          -0.11256736,
+          0.02373079,
+          -0.23111705,
+          0.06039214,
+          0.05907847,
+          0.06034953,
+          0.07004726,
+          0.07008622
+        ],
+        "atomic_dipoles_debye": [
+          [
+            0.31523517532566736,
+            -0.056819039433778085,
+            -0.01062546612079974
+          ],
+          [
+            -0.025237483662246867,
+            0.3634782604896845,
+            -0.1968848001670281
+          ],
+          [
+            -0.7619803385818195,
+            -1.1630229431086474,
+            0.7451046670489833
+          ],
+          [
+            -0.05740841960593732,
+            0.2824454766205898,
+            0.15599381834602236
+          ],
+          [
+            -0.14592169043239472,
+            -0.24553087923433942,
+            0.15544663116531493
+          ],
+          [
+            -0.11860190638960734,
+            0.027434874323084828,
+            -0.3040161859859574
+          ],
+          [
+            0.15455577444399315,
+            0.014143268656896468,
+            0.28972003127871
+          ],
+          [
+            0.09031048892258624,
+            -0.2505184975033779,
+            -0.1924634067597799
+          ]
+        ],
+        "alpha_atoms_au": [
+          6.775,
+          6.422,
+          22.31,
+          2.317,
+          2.325,
+          2.317,
+          2.258,
+          2.258
+        ],
+        "qrrho_free_energy_hartree": -10.881880425684
+      },
+      "diastereomer": 0,
+      "mirror_rmsd_a": 0.0
+    }
+  ]
+}

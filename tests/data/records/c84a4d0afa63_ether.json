@@ -1,0 +1,108 @@
+{
+  "status": "ok",
+  "smiles": "Cl/C=C/Cl",
+  "solvent": "ether",
+  "protocol": {
+    "method": "GFN2-xTB",
+    "thermochemistry": "xTB coupled RRHO with free-rotor treatment below 50 cm^-1",
+    "temperature_k": 298.15,
+    "n_seed": 100,
+    "n_embedded": 2,
+    "polar_h_amplification": "For molecules with at least two rotatable terminal OH, SH, or NH2 groups, each ETKDG conformer is supplemented with two random polar-H torsion variants and one feasible intramolecular-H-bond variant before optimization",
+    "n_polar_h_variants": 0,
+    "n_optimized": 2,
+    "elapsed_seconds": 0.388,
+    "embed_prune_rms_a": 0.125,
+    "postopt_rms_a": 0.5,
+    "postopt_rmsd": "Kabsch RMSD (reflections allowed) minimised over spyrmsd graph automorphisms, carbon-bound H removed",
+    "postopt_mu_d": 0.2,
+    "mirror_images": "chiral conformers are stored with an explicit mirror twin ('mirror_of')",
+    "mirror_distinct_rms_a": 0.1,
+    "diastereomer_averaging": "Boltzmann average within each diastereomer, equal weight between them",
+    "stereo_coupling_bonds": 3,
+    "stereo_polar_bonds": 2,
+    "enumerated_stereo_elements": [],
+    "stereo_fallback": null
+  },
+  "n_success": 2,
+  "failures": {},
+  "diastereomers": [
+    {
+      "index": 0,
+      "smiles": "Cl/C=C/Cl",
+      "n_seed": 100,
+      "n_embedded": 2,
+      "n_polar_h_variants": 0,
+      "n_success": 2,
+      "n_conformers": 1
+    }
+  ],
+  "conformers": [
+    {
+      "seed_id": 0,
+      "optimization_attempts": 1,
+      "molblock": "\n     RDKit          3D\n\n  6  5  0  0  0  0  0  0  0  0999 V2000\n    2.1015   -0.3928    0.0051 Cl  0  0  0  0  0  0  0  0  0  0  0  0\n    0.5560    0.3586   -0.0006 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.5559   -0.3588    0.0004 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.1013    0.3931   -0.0046 Cl  0  0  0  0  0  0  0  0  0  0  0  0\n    0.5819    1.4363   -0.0047 H   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.5822   -1.4364    0.0044 H   0  0  0  0  0  0  0  0  0  0  0  0\n  1  2  1  0\n  2  3  2  0\n  3  4  1  0\n  2  5  1  0\n  3  6  1  0\nM  END\n",
+      "alpb": {
+        "energy_hartree": -14.375335507211,
+        "dipole_debye": 0.001,
+        "dipole_vector_debye": [
+          0.0,
+          -0.0,
+          -0.0
+        ],
+        "dipole_vector_unit": "debye",
+        "charges_e": [
+          -0.14656825,
+          0.03511944,
+          0.03509013,
+          -0.14662629,
+          0.11148686,
+          0.1114981
+        ],
+        "atomic_dipoles_debye": [
+          [
+            -0.05233852500356787,
+            -0.06996314755213826,
+            0.00029425798917921
+          ],
+          [
+            0.6216265979731785,
+            -0.26453912689295206,
+            0.00202058677617608
+          ],
+          [
+            -0.6213849287185257,
+            0.2645452270844873,
+            -0.0019465457014175899
+          ],
+          [
+            0.05228085277609551,
+            0.07006565618739434,
+            -9.867059808185999e-05
+          ],
+          [
+            0.012759999391360409,
+            0.4035610686021352,
+            -0.00154914364036404
+          ],
+          [
+            -0.01299231501899261,
+            -0.40357309106295247,
+            0.0014441186760996798
+          ]
+        ],
+        "alpha_atoms_au": [
+          15.582,
+          8.549,
+          8.549,
+          15.582,
+          2.029,
+          2.029
+        ],
+        "qrrho_free_energy_hartree": -14.370827519662
+      },
+      "diastereomer": 0,
+      "mirror_rmsd_a": 0.0004
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "craft-epsilon"
+version = "1.0.0"
+description = "CRAFT-epsilon: conformer-resolved atom- and fragment-based theory for the static relative permittivity of pure organic liquids"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Simon Müller", email = "simon.mueller@tuhh.de" }]
+keywords = ["permittivity", "dielectric constant", "GFN2-xTB", "conformers", "Onsager", "Kirkwood"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Chemistry",
+]
+dependencies = [
+    "molecule-resolver>=0.5.4",
+    "numpy",
+    "rdkit",
+    "spyrmsd",
+]
+
+[project.scripts]
+craft-epsilon = "craft_epsilon.cli:main"
+
+[tool.setuptools]
+packages = ["craft_epsilon"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-m 'not xtb and not network'"
+markers = [
+    "xtb: end-to-end calculation with xtb (pytest -m xtb; uses or downloads the xtb program)",
+    "network: needs an internet connection (pytest -m network)",
+]

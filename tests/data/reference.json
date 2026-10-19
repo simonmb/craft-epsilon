@@ -1,0 +1,114 @@
+{
+ "C=C/C=C\\C": {
+  "name": "cis-1,3-Pentadiene",
+  "class": "non_polar",
+  "record": "39418174d008_ether.json",
+  "epsilon_paper": 2.2451971224697544,
+  "molar_volume_smi2DC": 96.44
+ },
+ "CCBr": {
+  "name": "Bromoethane",
+  "class": "single_polar",
+  "record": "038fe59d5ce4_ether.json",
+  "epsilon_paper": 9.337942132017115,
+  "molar_volume_smi2DC": 73.67
+ },
+ "CC(C)S(C)(=O)=O": {
+  "name": "Methyl-i-propyl sulfone",
+  "class": "single_polar",
+  "record": "8b19e55dfb57_ether.json",
+  "epsilon_paper": 46.607363060725845,
+  "molar_volume_smi2DC": 119.24
+ },
+ "COC(=O)OC": {
+  "name": "Dimethyl carbonate",
+  "class": "single_polar",
+  "record": "6ccad973a4ea_ether.json",
+  "epsilon_paper": 2.4342712410889287,
+  "molar_volume_smi2DC": 86.55
+ },
+ "CO[Si](C)(C)C": {
+  "name": "Methoxytrimethylsilane",
+  "class": "single_polar",
+  "record": "d807ec630c8a_ether.json",
+  "epsilon_paper": 2.4734467192780976,
+  "molar_volume_smi2DC": 133.85
+ },
+ "CCC(C)Br": {
+  "name": "2-Bromobutane",
+  "class": "single_polar",
+  "record": "f97a1a5b8ac4_ether.json",
+  "epsilon_paper": 8.101234578035024,
+  "molar_volume_smi2DC": 107.70999999999998
+ },
+ "CC(Cl)(Cl)Cl": {
+  "name": "1,1,1-trichloroethane",
+  "class": "multiple_polar",
+  "record": "be849a7e4890_ether.json",
+  "epsilon_paper": 6.849934004005772,
+  "molar_volume_smi2DC": 95.4
+ },
+ "CC(Br)C(C)Br": {
+  "name": "2,3-Dibromobutane",
+  "class": "multiple_polar",
+  "record": "70b2c9a0c63c_ether.json",
+  "epsilon_paper": 2.6215746392949697,
+  "molar_volume_smi2DC": 123.12
+ },
+ "Cl/C=C/Cl": {
+  "name": "(e)-1,2-dichloroethene",
+  "class": "multiple_polar",
+  "record": "c84a4d0afa63_ether.json",
+  "epsilon_paper": 3.6296309613371625,
+  "molar_volume_smi2DC": 75.94
+ },
+ "CC(=O)CC(C)=O": {
+  "name": "pentane-2,4-dione",
+  "class": "multiple_polar",
+  "record": "f992fc62b91b_ether.json",
+  "epsilon_paper": 7.5399462277456735,
+  "molar_volume_smi2DC": 105.50999999999999
+ },
+ "C#CCO": {
+  "name": "prop-2-yn-1-ol",
+  "class": "H_bonding",
+  "record": "ad92837b8413_ether.json",
+  "epsilon_paper": 21.434964937107658,
+  "molar_volume_smi2DC": 61.01
+ },
+ "CCC(=O)O": {
+  "name": "Propanoic acid",
+  "class": "H_bonding",
+  "record": "5a66bc5908e7_ether.json",
+  "epsilon_paper": 2.8083157288686635,
+  "molar_volume_smi2DC": 72.82
+ },
+ "CCNC=O": {
+  "name": "N-Ethylformamide",
+  "class": "H_bonding",
+  "record": "7a96bab53c9e_ether.json",
+  "epsilon_paper": 116.69670006667877,
+  "molar_volume_smi2DC": 82.01
+ },
+ "CC(C)S": {
+  "name": "2-Propanethiol",
+  "class": "H_bonding",
+  "record": "852799b2997a_ether.json",
+  "epsilon_paper": 6.1444826912799275,
+  "molar_volume_smi2DC": 89.75999999999999
+ },
+ "c1cc[nH]c1": {
+  "name": "1h-pyrrole",
+  "class": "H_bonding",
+  "record": "f996e37e5a4b_ether.json",
+  "epsilon_paper": 10.937286645672991,
+  "molar_volume_smi2DC": 71.89
+ },
+ "COCCO": {
+  "name": "2-Methoxyethanol (Ethylene glycol monomethyl ether)",
+  "class": "H_bonding",
+  "record": "9431dc748b89_ether.json",
+  "epsilon_paper": 16.051508738671394,
+  "molar_volume_smi2DC": 80.75
+ }
+}

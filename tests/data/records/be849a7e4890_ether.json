@@ -1,0 +1,122 @@
+{
+  "status": "ok",
+  "smiles": "CC(Cl)(Cl)Cl",
+  "solvent": "ether",
+  "protocol": {
+    "method": "GFN2-xTB",
+    "thermochemistry": "xTB coupled RRHO with free-rotor treatment below 50 cm^-1",
+    "temperature_k": 298.15,
+    "n_seed": 100,
+    "n_embedded": 1,
+    "polar_h_amplification": "For molecules with at least two rotatable terminal OH, SH, or NH2 groups, each ETKDG conformer is supplemented with two random polar-H torsion variants and one feasible intramolecular-H-bond variant before optimization",
+    "n_polar_h_variants": 0,
+    "n_optimized": 1,
+    "elapsed_seconds": 0.548,
+    "embed_prune_rms_a": 0.125,
+    "postopt_rms_a": 0.5,
+    "postopt_rmsd": "Kabsch RMSD (reflections allowed) minimised over spyrmsd graph automorphisms, carbon-bound H removed",
+    "postopt_mu_d": 0.2,
+    "mirror_images": "chiral conformers are stored with an explicit mirror twin ('mirror_of')",
+    "mirror_distinct_rms_a": 0.1,
+    "diastereomer_averaging": "Boltzmann average within each diastereomer, equal weight between them",
+    "stereo_coupling_bonds": 3,
+    "stereo_polar_bonds": 2,
+    "enumerated_stereo_elements": [],
+    "stereo_fallback": null
+  },
+  "n_success": 1,
+  "failures": {},
+  "diastereomers": [
+    {
+      "index": 0,
+      "smiles": "CC(Cl)(Cl)Cl",
+      "n_seed": 100,
+      "n_embedded": 1,
+      "n_polar_h_variants": 0,
+      "n_success": 1,
+      "n_conformers": 1
+    }
+  ],
+  "conformers": [
+    {
+      "seed_id": 0,
+      "optimization_attempts": 1,
+      "molblock": "\n     RDKit          3D\n\n  8  7  0  0  0  0  0  0  0  0999 V2000\n   -0.8124    0.0801   -0.2615 C   0  0  0  0  0  0  0  0  0  0  0  0\n    0.6153   -0.0606    0.1981 C   0  0  0  0  0  0  0  0  0  0  0  0\n    1.5712   -1.0194   -0.9663 Cl  0  0  0  0  0  0  0  0  0  0  0  0\n    1.3954    1.5365    0.3647 Cl  0  0  0  0  0  0  0  0  0  0  0  0\n    0.7017   -0.8794    1.7824 Cl  0  0  0  0  0  0  0  0  0  0  0  0\n   -0.8358    0.5809   -1.2268 H   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.3711    0.6667    0.4639 H   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.2642   -0.9048   -0.3546 H   0  0  0  0  0  0  0  0  0  0  0  0\n  1  2  1  0\n  2  3  1  0\n  2  4  1  0\n  2  5  1  0\n  1  6  1  0\n  1  7  1  0\n  1  8  1  0\nM  END\n",
+      "alpb": {
+        "energy_hartree": -19.470804387712,
+        "dipole_debye": 2.065,
+        "dipole_vector_debye": [
+          -1.95714478421,
+          0.193172731948,
+          -0.630353125304
+        ],
+        "dipole_vector_unit": "debye",
+        "charges_e": [
+          -0.1542258,
+          0.24370222,
+          -0.14112598,
+          -0.14085269,
+          -0.14100379,
+          0.11116793,
+          0.11118726,
+          0.11115085
+        ],
+        "atomic_dipoles_debye": [
+          [
+            0.43866957719706595,
+            -0.04363662719606981,
+            0.14108263724470313
+          ],
+          [
+            0.4041502454345766,
+            -0.03933777138628491,
+            0.13027614794009634
+          ],
+          [
+            0.1434410221271409,
+            0.05484743211213672,
+            0.1649242699963726
+          ],
+          [
+            0.15745590716968613,
+            -0.15213948857690043,
+            0.05788758965102729
+          ],
+          [
+            0.21432890788108605,
+            0.04437642792450119,
+            -0.05757571735879019
+          ],
+          [
+            0.0007027928997845,
+            0.15575024278151478,
+            -0.2993613840000936
+          ],
+          [
+            -0.1664928834147198,
+            0.18246631120203521,
+            0.2294886972049294
+          ],
+          [
+            -0.13372440829269178,
+            -0.3086660315661989,
+            -0.02666536057838408
+          ]
+        ],
+        "alpha_atoms_au": [
+          6.888,
+          5.956,
+          15.572,
+          15.571,
+          15.571,
+          2.031,
+          2.031,
+          2.031
+        ],
+        "qrrho_free_energy_hartree": -19.455470828989
+      },
+      "diastereomer": 0,
+      "mirror_rmsd_a": 0.0004
+    }
+  ]
+}
