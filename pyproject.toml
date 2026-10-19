@@ -13,8 +13,18 @@ license-files = ["LICENSE"]
 authors = [{ name = "Simon Müller", email = "simon.mueller@tuhh.de" }]
 keywords = ["permittivity", "dielectric constant", "GFN2-xTB", "conformers", "Onsager", "Kirkwood"]
 classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "Topic :: Scientific/Engineering :: Chemistry",
+    "Topic :: Scientific/Engineering :: Physics",
 ]
 dependencies = [
     "molecule-resolver>=0.5.4",
@@ -22,6 +32,10 @@ dependencies = [
     "rdkit",
     "spyrmsd",
 ]
+
+[project.urls]
+Repository = "https://github.com/simonmb/craft-epsilon"
+Issues = "https://github.com/simonmb/craft-epsilon/issues"
 
 [project.scripts]
 craft-epsilon = "craft_epsilon.cli:main"
